@@ -1,0 +1,5 @@
+#!/bin/bash
+/home/ioss/anaconda3/envs/venv/bin/python3 -u main.py
+sleep 5
+google-chrome --kiosk 127.0.0.1:8080
+exit 0

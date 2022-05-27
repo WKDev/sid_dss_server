@@ -1,0 +1,199 @@
+YOLOv5 🚀 v6.1-198-gd7d2b10 Python-3.9.12 torch-1.11.0 CUDA:0 (NVIDIA GeForce RTX 3060, 12045MiB)
+
+INFO:     Started server process [1714]
+Started server process [1714]
+INFO:     Waiting for application startup.
+Waiting for application startup.
+INFO:     Application startup complete.
+Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+Fusing layers... 
+Model summary: 224 layers, 7059304 parameters, 0 gradients
+1/2: http://192.168.0.164:5000/1...  Success (inf frames 640x480 at 25.00 FPS)
+2/2: http://192.168.0.164:5000/2...  Success (inf frames 640x480 at 25.00 FPS)
+
+INFO:     ('127.0.0.1', 57252) - "WebSocket /notification" [accepted]
+('127.0.0.1', 57252) - "WebSocket /notification" [accepted]
+YOLOv5 🚀 v6.1-198-gd7d2b10 Python-3.9.12 torch-1.11.0 CUDA:0 (NVIDIA GeForce RTX 3060, 12045MiB)
+
+Fusing layers... 
+Model summary: 224 layers, 7059304 parameters, 0 gradients
+YOLOv5 🚀 v6.1-198-gd7d2b10 Python-3.9.12 torch-1.11.0 CUDA:0 (NVIDIA GeForce RTX 3060, 12045MiB)
+
+Fusing layers... 
+Model summary: 224 layers, 7059304 parameters, 0 gradients
+1/2: http://192.168.0.164:5000/1...  Success (inf frames 640x480 at 25.00 FPS)
+2/2: http://192.168.0.164:5000/2...  Success (inf frames 640x480 at 25.00 FPS)
+
+WARNING: Video stream unresponsive, please check your IP camera connection.
+[tcp @ 0x7f74e8014d80] Connection to tcp://192.168.0.164:5000 failed: Connection refused
+YOLOv5 🚀 v6.1-198-gd7d2b10 Python-3.9.12 torch-1.11.0 CUDA:0 (NVIDIA GeForce RTX 3060, 12045MiB)
+
+Fusing layers... 
+Model summary: 224 layers, 7059304 parameters, 0 gradients
+[tcp @ 0x7f76cd123cc0] Connection to tcp://192.168.0.164:5000 failed: Connection refused
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ioss/ioss/backend/main.py", line 547, in run
+    dataset = LoadStreams(source, img_size=imgsz,
+  File "/home/ioss/ioss/backend/utils/dataloaders.py", line 327, in __init__
+    assert cap.isOpened(), f'{st}Failed to open {s}'
+AssertionError: 1/2: http://192.168.0.164:5000/1... Failed to open http://192.168.0.164:5000/1
+WARNING: Video stream unresponsive, please check your IP camera connection.
+[tcp @ 0x7f74e4018480] Connection to tcp://192.168.0.164:5000 failed: Connection refused
+INFO:     Shutting down
+Shutting down
+INFO:     Waiting for background tasks to complete. (CTRL+C to force quit)
+Waiting for background tasks to complete. (CTRL+C to force quit)
+__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/routing.py", line 68, in app
+    await response(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/responses.py", line 260, in __call__
+    await wrap(partial(self.listen_for_disconnect, receive))
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 662, in __aexit__
+    raise exceptions[0]
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/responses.py", line 256, in wrap
+    await func()
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/responses.py", line 245, in stream_response
+    async for chunk in self.body_iterator:
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/concurrency.py", line 63, in iterate_in_threadpool
+    yield await anyio.to_thread.run_sync(_next, iterator)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/concurrency.py", line 53, in _next
+    return next(iterator)
+  File "/home/ioss/ioss/backend/main.py", line 214, in blobdetector
+    ret_detected = cv2.addWeighted(
+cv2.error: OpenCV(4.5.5) /io/opencv/modules/core/src/arithm.cpp:647: error: (-209:Sizes of input arguments do not match) The operation is neither 'array op array' (where arrays have the same size and the same number of channels), nor 'array op scalar', nor 'scalar op array' in function 'arithm_op'
+
+Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/uvicorn/protocols/http/h11_impl.py", line 366, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/fastapi/applications.py", line 269, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/applications.py", line 124, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/middleware/cors.py", line 84, in __call__
+    await self.app(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/exceptions.py", line 93, in __call__
+    raise exc
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/exceptions.py", line 82, in __call__
+    await self.app(scope, receive, sender)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 21, in __call__
+    raise e
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/routing.py", line 670, in __call__
+    await route.handle(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/routing.py", line 266, in handle
+    await self.app(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/routing.py", line 68, in app
+    await response(scope, receive, send)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/responses.py", line 260, in __call__
+    await wrap(partial(self.listen_for_disconnect, receive))
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 662, in __aexit__
+    raise exceptions[0]
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/responses.py", line 256, in wrap
+    await func()
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/responses.py", line 245, in stream_response
+    async for chunk in self.body_iterator:
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/concurrency.py", line 63, in iterate_in_threadpool
+    yield await anyio.to_thread.run_sync(_next, iterator)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/anyio/to_thread.py", line 31, in run_sync
+    return await get_asynclib().run_sync_in_worker_thread(
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 937, in run_sync_in_worker_thread
+    return await future
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/anyio/_backends/_asyncio.py", line 867, in run
+    result = context.run(func, *args)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/starlette/concurrency.py", line 53, in _next
+    return next(iterator)
+  File "/home/ioss/ioss/backend/main.py", line 214, in blobdetector
+    ret_detected = cv2.addWeighted(
+cv2.error: OpenCV(4.5.5) /io/opencv/modules/core/src/arithm.cpp:647: error: (-209:Sizes of input arguments do not match) The operation is neither 'array op array' (where arrays have the same size and the same number of channels), nor 'array op scalar', nor 'scalar op array' in function 'arithm_op'
+
+INFO:     ('127.0.0.1', 50166) - "WebSocket /notification" [accepted]
+('127.0.0.1', 50166) - "WebSocket /notification" [accepted]
+YOLOv5 🚀 v6.1-198-gd7d2b10 Python-3.9.12 torch-1.11.0 CUDA:0 (NVIDIA GeForce RTX 3060, 12045MiB)
+
+Fusing layers... 
+Model summary: 224 layers, 7059304 parameters, 0 gradients
+YOLOv5 🚀 v6.1-198-gd7d2b10 Python-3.9.12 torch-1.11.0 CUDA:0 (NVIDIA GeForce RTX 3060, 12045MiB)
+
+Fusing layers... 
+Model summary: 224 layers, 7059304 parameters, 0 gradients
+WARNING: Environment does not support cv2.imshow() or PIL Image.show() image displays
+OpenCV(4.5.5) /io/opencv/modules/highgui/src/window.cpp:1268: error: (-2:Unspecified error) The function is not implemented. Rebuild the library with Windows, GTK+ 2.x or Cocoa support. If you are on Ubuntu or Debian, install libgtk2.0-dev and pkg-config, then re-run cmake or configure script in function 'cvShowImage'
+
+1/2: http://192.168.0.164:5000/1...  Success (inf frames 831x624 at 25.00 FPS)
+2/2: http://192.168.0.164:5000/2...  Success (inf frames 640x480 at 25.00 FPS)
+
+INFO:     ('127.0.0.1', 50176) - "WebSocket /notification" [accepted]
+('127.0.0.1', 50176) - "WebSocket /notification" [accepted]
+INFO:     Shutting down
+Shutting down
+INFO:     Waiting for connections to close. (CTRL+C to force quit)
+Waiting for connections to close. (CTRL+C to force quit)
+INFO:     Waiting for background tasks to complete. (CTRL+C to force quit)
+Waiting for background tasks to complete. (CTRL+C to force quit)
+WARNING: Video stream unresponsive, please check your IP camera connection.
+WARNING: Video stream unresponsive, please check your IP camera connection.
+[tcp @ 0x7f12b00141c0] Connection to tcp://192.168.0.164:5000 failed: Connection refused
+[tcp @ 0x7f12bc00bb80] Connection to tcp://192.168.0.164:5000 failed: Connection refused
+YOLOv5 🚀 v6.1-198-gd7d2b10 Python-3.9.12 torch-1.11.0 CUDA:0 (NVIDIA GeForce RTX 3060, 12045MiB)
+
+Fusing layers... 
+Model summary: 224 layers, 7059304 parameters, 0 gradients
+WARNING: Environment does not support cv2.imshow() or PIL Image.show() image displays
+OpenCV(4.5.5) /io/opencv/modules/highgui/src/window.cpp:1268: error: (-2:Unspecified error) The function is not implemented. Rebuild the library with Windows, GTK+ 2.x or Cocoa support. If you are on Ubuntu or Debian, install libgtk2.0-dev and pkg-config, then re-run cmake or configure script in function 'cvShowImage'
+
+[tcp @ 0x7f148c9aa740] Connection to tcp://192.168.0.164:5000 failed: Connection refused
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/threading.py", line 973, in _bootstrap_inner
+    self.run()
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/threading.py", line 910, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/ioss/anaconda3/envs/venv/lib/python3.9/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ioss/ioss/backend/main.py", line 539, in run
+    cudnn.benchmark = True  # set True to speed up constant image size inference
+  File "/home/ioss/ioss/backend/utils/dataloaders.py", line 327, in __init__
+    assert cap.isOpened(), f'{st}Failed to open {s}'
+AssertionError: 1/2: http://192.168.0.164:5000/1... Failed to open http://192.168.0.164:5000/1
