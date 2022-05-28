@@ -144,7 +144,7 @@ def feature_visualization(x, module_type, stage, n=32, save_dir=Path('runs/detec
             ax = ax.ravel()
             plt.subplots_adjust(wspace=0.05, hspace=0.05)
             for i in range(n):
-                ax[i].imshow(blocks[i].squeeze())  # cmap='gray'
+                # ax[i].imshow(blocks[i].squeeze())  # cmap='gray'
                 ax[i].axis('off')
 
             LOGGER.info(f'Saving {f}... ({n}/{channels})')
@@ -375,7 +375,7 @@ def plot_labels(labels, names=(), save_dir=Path('')):
     img = Image.fromarray(np.ones((2000, 2000, 3), dtype=np.uint8) * 255)
     for cls, *box in labels[:1000]:
         ImageDraw.Draw(img).rectangle(box, width=1, outline=colors(cls))  # plot
-    ax[1].imshow(img)
+    # ax[1].imshow(img)
     ax[1].axis('off')
 
     for a in [0, 1, 2, 3]:

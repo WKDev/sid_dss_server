@@ -1,172 +1,134 @@
 typical run
-INFO:     127.0.0.1:57246 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57248 - "GET /css/main.2545fb7f.css HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:57246 - "GET /js/main.6b8238ba.js HTTP/1.1" 304 Not Modified
-INFO:     127.0.0.1:57246 - "GET /inf/1 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57248 - "GET /inf/2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57250 - "GET /bug HTTP/1.1" 200 OK
-real stream
-notification channel connected : Address(host='127.0.0.1', port=57252)
-INFO:     127.0.0.1:57254 - "GET /manifest.json HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57256 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     127.0.0.1:57256 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:57256 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60370 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60374 - "GET /manifest.json HTTP/1.1" 404 Not Found
+notification channel connected : Address(host='127.0.0.1', port=60376)
+INFO:     127.0.0.1:60378 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60372 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60380 - "GET /bug HTTP/1.1" 200 OK
+escape from for loop
+typical run
+INFO:     127.0.0.1:60382 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60382 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60384 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60386 - "GET /bug HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60388)
+INFO:     127.0.0.1:60390 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60392 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60390 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60394 - "GET /inf/2 HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60396)
+INFO:     127.0.0.1:60398 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60400 - "GET /inf/1 HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60404)
+INFO:     127.0.0.1:60408 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60410 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60402 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60406 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60412 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60412 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60414 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60416 - "GET /bug HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60418)
+INFO:     127.0.0.1:60420 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60422 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60420 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60424 - "GET /inf/2 HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60426)
+INFO:     127.0.0.1:60428 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60430 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60430 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60432 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60422 - "GET /manifest.json HTTP/1.1" 404 Not Found
+notification channel connected : Address(host='127.0.0.1', port=60434)
+INFO:     127.0.0.1:60436 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60438 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60438 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60440 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60422 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60442 - "GET /bug HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60444)
+INFO:     127.0.0.1:60446 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60446 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60448 - "GET /inf/2 HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60450)
+INFO:     127.0.0.1:60452 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60454 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60456 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60456 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60458 - "GET /inf/2 HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60462)
+INFO:     127.0.0.1:60464 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60460 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60466 - "GET /inf/ext_force/ HTTP/1.1" 307 Temporary Redirect
+force command
+rpi responded with 200
+INFO:     127.0.0.1:60466 - "GET /inf/ext_force HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60468 - "GET /cmd/dummy-bird/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60468 - "GET /cmd/dummy-bird HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60468 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60468 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
 stop realstream
 demo stream
-real stream
-INFO:     127.0.0.1:57256 - "GET /cmd/dummy-bird/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:57256 - "GET /cmd/dummy-bird HTTP/1.1" 200 OK
-demo stream started.
-escape from for loop
-/home/ioss/ioss/backend/assets/demo
-demo bird enbled.
-thread terminated due to event
-thread terminated due to event
-INFO:     127.0.0.1:57256 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:57256 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60468 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60468 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
+stop realstream
+demo stream
+INFO:     127.0.0.1:60468 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60468 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
 stop bugstream
-real stream
-EXTERMINATING...True
-rpi responded with 200
-EXTERMINATING...True
-rpi responded with 200
-EXTERMINATING...True
-rpi responded with 200
-INFO:     127.0.0.1:57258 - "GET /cmd/dummy-bird/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:57258 - "GET /cmd/dummy-bird HTTP/1.1" 200 OK
-demo stream stopped.
-escape from for loop
-typical run
-INFO:     127.0.0.1:57260 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:57260 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-stop realstream
-demo stream
-real stream
-INFO:     127.0.0.1:57262 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:57262 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-"GET /inf/2 HTTP/1.1" 200 OK
-notification channel connected : Address(host='127.0.0.1', port=50166)
-INFO:     127.0.0.1:50170 - "GET /bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50172 - "GET /cmd/dummy-bird/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50172 - "GET /cmd/dummy-bird HTTP/1.1" 200 OK
-demo stream started.
-escape from for loop
-/home/ioss/ioss/backend/assets/demo
-demo bird enbled.
-thread terminated due to event
-thread terminated due to event
-INFO:     127.0.0.1:50172 - "GET /cmd/dummy-bird/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50172 - "GET /cmd/dummy-bird HTTP/1.1" 200 OK
-demo stream stopped.
-escape from for loop
-typical run
-INFO:     127.0.0.1:50172 - "GET / HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50172 - "GET /inf/1 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50174 - "GET /inf/2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50144 - "GET /manifest.json HTTP/1.1" 404 Not Found
-notification channel connected : Address(host='127.0.0.1', port=50176)
-INFO:     127.0.0.1:50178 - "GET /bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50182 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50182 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50182 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50182 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50186 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50186 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50186 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50186 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
-demo stream
-real stream
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug/ HTTP/1.1" 307 Temporary Redirect
-INFO:     127.0.0.1:50188 - "GET /cmd/dummy-bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60468 - "GET /cmd/dummy-bird/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60468 - "GET /cmd/dummy-bird HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60468 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60468 - "GET /inf/1 HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60472)
+INFO:     127.0.0.1:60474 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60470 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60476 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60478 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60478 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60480 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60474 - "GET /manifest.json HTTP/1.1" 404 Not Found
+notification channel connected : Address(host='127.0.0.1', port=60482)
+INFO:     127.0.0.1:60484 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60490 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60474 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60492 - "GET /bug HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60494)
+INFO:     127.0.0.1:60496 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60496 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60498 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60474 - "GET /manifest.json HTTP/1.1" 404 Not Found
+notification channel connected : Address(host='127.0.0.1', port=60502)
+INFO:     127.0.0.1:60504 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60506 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60506 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60508 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60474 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60510 - "GET /bug HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60512)
+INFO:     127.0.0.1:60516 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60516 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60518 - "GET /inf/2 HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60522)
+INFO:     127.0.0.1:60524 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60520 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60526 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60526 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60528 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60524 - "GET /manifest.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60530 - "GET /bug HTTP/1.1" 200 OK
+notification channel connected : Address(host='127.0.0.1', port=60532)
+INFO:     127.0.0.1:60534 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60534 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60536 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60524 - "GET /manifest.json HTTP/1.1" 404 Not Found
+notification channel connected : Address(host='127.0.0.1', port=60540)
+INFO:     127.0.0.1:60538 - "GET /bug HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60542 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60542 - "GET /inf/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60524 - "GET /manifest.json HTTP/1.1" 404 Not Found
+notification channel connected : Address(host='127.0.0.1', port=60548)
+INFO:     127.0.0.1:60544 - "GET /inf/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60546 - "GET /bug HTTP/1.1" 200 OK

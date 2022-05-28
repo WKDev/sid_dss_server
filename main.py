@@ -31,11 +31,19 @@ import torch.backends.cudnn as cudnn
 import asyncio
 import numpy as np
 
-EXT_URL = 'http://192.168.0.164:5000/cmd/ext'
+from PIL import ImageFont, ImageDraw, Image
+
+EXT_URL = 'http://192.168.1.100:5000/cmd/ext'
 
 # BIRD_CAM =
-GROWTH_TRACKING_CAM = 'http://192.168.0.102:5000/1'
-BUG_DETECTION_CAM = 'http://192.168.0.102:5000/2'
+GROWTH_TRACKING_CAM = 'http://192.168.1.101:5000/1'
+BUG_DETECTION_CAM = 'http://192.168.1.101:5000/2'
+
+BIRD_DET_1 = "조류퇴치_1"
+BIRD_DET_2 = "조류퇴치_2"
+BIRD_DET_ERR = "조류퇴치_Check Connection again."
+
+BUG_TITLE = "노린재 트랩"
 
 # from blobdetection import blobdetector
 
@@ -158,8 +166,24 @@ def blobdetector(source):
             show_demo_bug = 0
 
         else:
-            print('real stream')
+            # print('real stream')
+
             cap = cv2.VideoCapture(source)
+            if not cap.isOpened():
+                cap.release()
+                target_img = cv2.imread('assets/bug_opening.png')
+
+                ret, preprocessed = cv2.imencode('.jpg', target_img)
+
+                raw_img = preprocessed.tobytes()
+
+                yield (b'--frame\r\n'
+                        b'Content-Type:image/jpeg\r\n'
+                        b'Content-Length: ' +
+                        f"{len(raw_img)}".encode() + b'\r\n'
+                        b'\r\n' + bytearray(raw_img) + b'\r\n')
+
+
             show_demo_bug = 0
 
 
@@ -207,9 +231,12 @@ def blobdetector(source):
 
                     number_of_blobs = len(keypoints)
                     text = "Bugs Detected : " + str(len(keypoints))
+                    
+                    ret_detected = putKorean(ret_detected, BUG_TITLE, (20,40))
+
 
                     if number_of_blobs:
-                        cv2.putText(ret_detected, text, (20, 40),
+                        cv2.putText(ret_detected, text, (80, 40),
                                     cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
 
                     if number_of_blobs > 2 and abs(time.time()-detected_time) > 3:
@@ -238,7 +265,9 @@ def blobdetector(source):
                            b'\r\n' + bytearray(byte_img) + b'\r\n')
 
                 else:
-                    ret, preprocessed = cv2.imencode('.jpg', frame)
+                    target_img = cv2.imread('assets/bug_opening.png')
+
+                    ret, preprocessed = cv2.imencode('.jpg', target_img)
 
                     raw_img = preprocessed.tobytes()
 
@@ -247,7 +276,31 @@ def blobdetector(source):
                            b'Content-Length: ' +
                            f"{len(raw_img)}".encode() + b'\r\n'
                            b'\r\n' + bytearray(raw_img) + b'\r\n')
+            else:
 
+                    target_img = cv2.imread('assets/bug_opening.png')
+
+                    ret, preprocessed = cv2.imencode('.jpg', target_img)
+
+                    raw_img = preprocessed.tobytes()
+
+                    yield (b'--frame\r\n'
+                           b'Content-Type:image/jpeg\r\n'
+                           b'Content-Length: ' +
+                           f"{len(raw_img)}".encode() + b'\r\n'
+                           b'\r\n' + bytearray(raw_img) + b'\r\n')
+            
+
+
+def putKorean(img, text, pos):
+    # img = np.full(shape=(480,640,3), fill_value=255, dtype=np.uint8)
+    img = Image.fromarray(img)
+    font = ImageFont.truetype("fonts/gulim.ttc", 40)
+    draw = ImageDraw.Draw(img)
+    draw.text(pos, text, font=font, fill=(0,0,0))
+    return np.array(img)
+
+    
 
 def image_to_byte(img_id=1):
     global inferenced_img1
@@ -262,7 +315,15 @@ def image_to_byte(img_id=1):
             target_img = inferenced_img2
 
         else:
-            target_img = cv2.imread('assets/cam1_opening.png')
+            if img_id ==1:
+                target_img = cv2.imread('assets/cam1_opening.png')
+            elif img_id==2:
+                target_img = cv2.imread('assets/cam2_opening.png')
+
+            # cv2.putText(target_img, BIRD_DET_ERR, (20, 40),
+            #                         cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
+            
+            target_img = putKorean(target_img, BIRD_DET_ERR, (20,40))
             # print('cannot detect cam!' + 'img_id')
             # print(inferenced_img1)
             # print(inferenced_img2)
@@ -659,16 +720,27 @@ def run(
                 # if view_img:
                 #     cv2.imshow(str(p), im0)
                 #     cv2.waitKey(1)  # 1 millisecond
+
+
                 cv2.putText(im0, f'{1/(t3 - t2):.3f}fps', (510, 460),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
                 # target_img, text_content, position(x,y), font, ?,color, ?
                 if str(p)[-1] == '1':
                     inferenced_img1 = im0
+                    
+                    # cv2.putText(inferenced_img1, BIRD_DET_1, (20, 40),
+                    #                 cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
+                    inferenced_img1 = putKorean(inferenced_img1, BIRD_DET_1, (20,40))
+
 
                 # encoded, buffer = cv2.imencode('.jpg', inferenced_img1)
                 # footage_socket.send_string(base64.b64encode(buffer))
                 elif str(p)[-1] == '2':
+
+                    # cv2.putText(inferenced_img2, BIRD_DET_2, (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2)
                     inferenced_img2 = im0
+                    inferenced_img2 = putKorean(inferenced_img2, BIRD_DET_2, (20,40))
+
                 else:
                     # only occurs in case of demo
                     inferenced_img1 = im0

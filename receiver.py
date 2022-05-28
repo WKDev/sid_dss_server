@@ -14,7 +14,7 @@ while True:
         img = base64.b64decode(frame)
         npimg = np.fromstring(img, dtype=np.uint8)
         source = cv2.imdecode(npimg, 1)
-        cv2.imshow("image", source)
+        # cv2.imshow("image", source)
         cv2.waitKey(1)
 
     except KeyboardInterrupt:
