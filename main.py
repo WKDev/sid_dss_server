@@ -37,6 +37,7 @@ EXT_URL = 'http://192.168.1.100:5000/cmd/ext'
 
 # BIRD_CAM =
 GROWTH_TRACKING_CAM = 'http://192.168.1.101:5000/1'
+# GROWTH_TRACKING_CAM = 'http://127.0.0.1:5000/live/1' # for devel
 BUG_DETECTION_CAM = 'http://192.168.1.101:5000/2'
 
 BIRD_DET_1 = "조류퇴치_1"
@@ -44,6 +45,9 @@ BIRD_DET_2 = "조류퇴치_2"
 BIRD_DET_ERR = "조류퇴치_Check Connection again."
 
 BUG_TITLE = "노린재 트랩"
+GROWTH_TITLE = '성장감시'
+
+ASSET_PATH = '/home/ioss/ioss/backend/assets'
 
 # from blobdetection import blobdetector
 
@@ -140,16 +144,16 @@ def blobdetector(source):
 
     # Set Area filtering parameters
     params.filterByArea = True
-    params.minArea = 15
-    params.maxArea = 200
+    params.minArea = 50
+    params.maxArea = 500
     # Set Circularity filtering parameters
     params.filterByCircularity = True
-    params.minCircularity = 0.5
+    params.minCircularity = 0.4
 
     # Set Convexity filtering parameters
     params.filterByConvexity = True
     
-    params.minConvexity = 0.2
+    params.minConvexity = 0.1
 
     # Set inertia filtering parameters
     params.filterByInertia = True
@@ -291,6 +295,67 @@ def blobdetector(source):
                            b'\r\n' + bytearray(raw_img) + b'\r\n')
             
 
+def growth_overlay(source):
+    global enable_bugdetection
+    global show_demo_bug
+    global is_bug
+
+    while True:
+
+        cap = cv2.VideoCapture(source)
+        if not cap.isOpened():
+            cap.release()
+            target_img = cv2.imread('assets/growth_opening.png')
+
+            ret, preprocessed = cv2.imencode('.jpg', target_img)
+
+            raw_img = preprocessed.tobytes()
+
+            yield (b'--frame\r\n'
+                    b'Content-Type:image/jpeg\r\n'
+                    b'Content-Length: ' +
+                    f"{len(raw_img)}".encode() + b'\r\n'
+                    b'\r\n' + bytearray(raw_img) + b'\r\n')
+
+
+        while cap.isOpened():
+            ret, frame = cap.read()
+
+            w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+            h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))      
+
+            if ret:
+
+                # Detect blobs
+                ret_detected = putKorean(frame, GROWTH_TITLE, (20,40))
+
+                ret, img = cv2.imencode('.jpg', ret_detected)
+
+                byte_img = img.tobytes()
+
+                yield (b'--frame\r\n'
+                        b'Content-Type:image/jpeg\r\n'
+                        b'Content-Length: ' +
+                        f"{len(byte_img)}".encode() + b'\r\n'
+                        b'\r\n' + bytearray(byte_img) + b'\r\n')
+
+               
+            else:
+
+                target_img = cv2.imread('assets/growth_opening.png')
+
+                ret, preprocessed = cv2.imencode('.jpg', target_img)
+
+                raw_img = preprocessed.tobytes()
+
+                yield (b'--frame\r\n'
+                        b'Content-Type:image/jpeg\r\n'
+                        b'Content-Length: ' +
+                        f"{len(raw_img)}".encode() + b'\r\n'
+                        b'\r\n' + bytearray(raw_img) + b'\r\n')
+            
+
+
 
 def putKorean(img, text, pos):
     # img = np.full(shape=(480,640,3), fill_value=255, dtype=np.uint8)
@@ -378,6 +443,11 @@ async def inferenced_1():
 @app.get("/inf/2")  # inferenced router for bird_detection
 def inferenced_2():
     return StreamingResponse(image_to_byte(img_id=2), media_type="multipart/x-mixed-replace; boundary=frame")
+
+@app.get("/growth")  # inferenced router for bird_detection
+def inferenced_2():
+    return StreamingResponse(growth_overlay(source=GROWTH_TRACKING_CAM), media_type="multipart/x-mixed-replace; boundary=frame")
+
 
 
 @app.get("/bug")  # inferenced router for bird_detection
@@ -483,7 +553,7 @@ async def websocket_endpoint(websocket: WebSocket):
         await asyncio.sleep(0.25)
 
 
-def send_extermination(num_objects=0, length=3, execution_time=0):
+def send_extermination(num_objects=0, length=15, execution_time=0):
     global is_bird
     global last_executed
     time_interval = (execution_time - last_executed)
@@ -525,7 +595,7 @@ def run(
         source='cameras.txt',  # file/dir/URL/glob, 0 for webcam
         data=ROOT / 'data/sid_bird_220523.yaml',  # dataset.yaml path
         imgsz=(640, 480),  # inference size (height, width)
-        conf_thres=0.25,  # confidence threshold
+        conf_thres=0.15,  # confidence threshold
         iou_thres=0.45,  # NMS IOU threshold
         max_det=1000,  # maximum detections per image
         device='',  # cuda device, i.e. 0 or 0,1,2,3 or cpu
